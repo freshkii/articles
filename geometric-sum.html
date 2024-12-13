@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Freshkii - Geometricals Sum</title>
+		<link href="style.css" rel="stylesheet">
+		<script>
+			MathJax = {
+				tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+			};
+    </script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	</head>
+	<body>
+		<h1><a href="index.html">freskhii's articles</a> - The gemoetrical sum</h1>
+		<p>
+		The famous sum $1 + q^1 + q^2 + \ldots + q^n = \frac{q^{n+1}-1}{q-1}$ - noted $S_n$ in this article - is generally proved by expressing $S_{n+1}$ in terms of $S_n$ , $q$ and $n$.
+		I'll present you another approach for $q,n\in \mathbb N$.
+		</p>
+
+		<p>
+		Let $S_n := 1 + q + q^2 + \ldots + q^n$.
+		</p>
+
+		<p>
+		If $q=1$, $S_n = n+1$.	
+		</p>
+
+		<p>
+		Let's try something when $q=2$. <br/>
+		In the binary base $S_n = 1 + 2 + \ldots + 2^n = 2^n + \ldots + 2 + 1= (1\ldots11)_2$. (the notation means "in base 2")<br/>
+		But $1\ldots11$ is also the biggest number with n+1 digits of binary base and there's only two of them so there's only $2^{n+1}$ numbers. <br/>
+		Consequently, by indexing each one of them in the ascending order, the biggest number (aka $1\ldots11$) has the index $2^{n+1}$. <br/>
+		$0$ get the index $1$ so the value of the number is the index $-1$. At last the biggest number is equal to $2^{n+1}-1$.
+		</p>
+
+		<p>
+		If we try to generalize the method for all $n \ge 2$ and $q \ne 1$, we get : <br/>
+		$S_n = 1 + q + \ldots + q^n=(1\ldots11)_q$ with $n+1$ ones.
+		But the largest number with $n+1$ digit of the base $q$ is made with the digit which value is $q-1$.<br/>
+		Let $k$ bet that digit, we obtain $k\ldots kk = q^{n+1}-1$, i.e. $$(q-1)\times q^n + \ldots + (q-1) \times q + q = q^{n+1}-1 \\ \Leftrightarrow q^n + \ldots + q + 1 = \frac{q^{n+1}-1}{q-1}$$
+		</p>
+		$\blacksquare$
+
+	</body>
+</html>
+
